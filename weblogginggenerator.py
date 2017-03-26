@@ -9,8 +9,6 @@ import subprocess
 
 target = ''
 port = 0
-listen = False
-
 
 def usage():
     print '''
@@ -46,30 +44,13 @@ def client_handler(client_socket):
 
 
 def main():
-    global listen, port, target
+    global port, target
 
-    try:
-        opts, args = getopt.getopt(sys.argv[1:], 'hle:t:p:cu:', [
-            'help', 'listen', 'target', 'port'
-        ])
-    except getopt.GetoptError as err:
-        print str(err)
-        usage()
+    args = (sys.argv[1:])
+    target = args[0]
+    port = int(args[1])
 
-    for o, a in opts:
-        if o in ('-h', '--help'):
-            usage()
-        elif o in ('-l', '--listen'):
-            listen = True
-        elif o in ('-t', '--target'):
-            target = a
-        elif o in ('-p', '--port'):
-            port = int(a)
-        else:
-            assert False, 'Unhandled Option'
-
-    if listen:
-        server_loop()
+    server_loop()
 
 main()
 
