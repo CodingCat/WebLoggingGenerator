@@ -9,6 +9,7 @@ import subprocess
 
 target = ''
 port = 0
+listen = False
 
 
 def usage():
