@@ -37,7 +37,7 @@ def client_handler(client_socket):
     try:
         while True:
             print("send")
-            client_socket.send('Hello World Hello World')
+            client_socket.send('Hello World Hello World\n')
             time.sleep(5)
     except:
         client_socket.send('Failed')
