@@ -71,9 +71,3 @@ def main():
 
 main()
 
-"""
-echo -ne 'GET / HTTP/1.1\r\nHost: www.google.com\r\n\r\n' | python netcat.py -t www.google.com -p 80
-also
-python netcat.py -l -p 9999 -c        # first  terminal
-python netcat.py -t localhost -p 9999 # second terminal
-"""
