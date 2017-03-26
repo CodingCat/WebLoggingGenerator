@@ -39,7 +39,7 @@ def client_handler(client_socket):
             print("send")
             client_socket.send('Hello World Hello World\n')
             print("sent")
-            time.sleep(5)
+            #time.sleep(5)
     except:
         client_socket.send('Failed')
 
