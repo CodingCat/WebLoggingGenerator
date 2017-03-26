@@ -53,14 +53,11 @@ def run_command(cmd):
 
 
 def client_handler(client_socket):
-    global upload, command
-
-    if len(upload_destination):
-        try:
-            while True:
-                client_socket.send('Hello World Hello World')
-        except:
-            client_socket.send('Failed')
+    try:
+        while True:
+            client_socket.send('Hello World Hello World')
+    except:
+        client_socket.send('Failed')
 
 
 def main():
