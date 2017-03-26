@@ -6,6 +6,7 @@ import socket
 import getopt
 import threading
 import subprocess
+import random
 
 target = ''
 port = 0
