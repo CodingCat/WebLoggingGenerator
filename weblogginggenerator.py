@@ -48,7 +48,7 @@ def compose_log_entry():
     user_agent_index = random.randint(0, 2)
     s = '%s %s %s %s' % (ip, actions[action_index], urls[url_index], user_agents[user_agent_index])
     print('generate %s' % s)
-    s
+    return s
 
 
 def client_handler(client_socket):
