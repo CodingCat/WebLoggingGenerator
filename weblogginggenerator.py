@@ -40,13 +40,13 @@ def compose_log_entry():
     actions = ['GET', 'POST']
     action_index = random.randint(0, 1)
     urls = ['index.html', 'about.html', 'product.html']
-    url_index = random.randint(0, 1)
+    url_index = random.randint(0, 2)
     user_agents = [
     'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36',
     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10; rv:33.0) Gecko/20100101 Firefox/33.0',
     'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 7.0; InfoPath.3; .NET CLR 3.1.40767; Trident/6.0; en-IN)']
     user_agent_index = random.randint(0, 2)
-    s = '%s %s %s %s' % (ip, actions[action_index], urls[url_index], user_agents[user_agent_index])
+    s = '%s %s %s %s\n' % (ip, actions[action_index], urls[url_index], user_agents[user_agent_index])
     print('generate %s' % s)
     return s
 
@@ -54,9 +54,7 @@ def compose_log_entry():
 def client_handler(client_socket):
     try:
         while True:
-            print("send")
             client_socket.send(compose_log_entry())
-            print("sent")
             #time.sleep(5)
     except:
         client_socket.send('Failed')
