@@ -55,7 +55,9 @@ def run_command(cmd):
 def client_handler(client_socket):
     try:
         while True:
+            print("send")
             client_socket.send('Hello World Hello World')
+            time.sleep(5)
     except:
         client_socket.send('Failed')
 
