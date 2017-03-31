@@ -47,7 +47,7 @@ def compose_log_entry():
     'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 7.0; InfoPath.3; .NET CLR 3.1.40767; Trident/6.0; en-IN)']
     user_agent_index = random.randint(0, 2)
     s = '%s %s %s %s\n' % (ip, actions[action_index], urls[url_index], user_agents[user_agent_index])
-    print('generate %s' % s)
+    #print('generate %s' % s)
     return s
 
 
@@ -55,7 +55,7 @@ def client_handler(client_socket):
     try:
         while True:
             client_socket.send(compose_log_entry())
-            #time.sleep(5)
+            time.sleep(0.5)
     except:
         client_socket.send('Failed')
 
