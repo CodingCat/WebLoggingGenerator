@@ -52,6 +52,7 @@ def compose_log_entry():
 
 
 def client_handler(client_socket):
+    print('get a connection')
     try:
         while True:
             client_socket.send(compose_log_entry())
